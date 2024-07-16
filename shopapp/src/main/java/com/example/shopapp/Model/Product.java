@@ -3,6 +3,9 @@ package com.example.shopapp.Model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "products")
 @Data  // Tạo getter, setter, toString, equals, và hashCode
@@ -10,7 +13,7 @@ import lombok.*;
 @AllArgsConstructor  // Tạo constructor với tất cả các tham số
 @Getter
 @Setter
-public class Product {
+public class Product extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -25,7 +28,12 @@ public class Product {
     private String thumbnail;
 
     // Nếu có quan hệ với Category, bạn có thể thêm thuộc tính và ánh xạ sau:
+    @Column(name = "description",length=300)
+    private String description;
+
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
+
+
 }

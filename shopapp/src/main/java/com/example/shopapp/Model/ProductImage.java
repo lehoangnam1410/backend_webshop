@@ -1,23 +1,26 @@
 package com.example.shopapp.Model;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Entity
-@Table(name = "categories")
+@Table(name = "product_images")
 @Data  // Tạo getter, setter, toString, equals, và hashCode
 @NoArgsConstructor  // Tạo constructor không tham số
 @AllArgsConstructor  // Tạo constructor với tất cả các tham số
 @Getter
 @Setter
-public class Category extends BaseEntity {
-
+public class ProductImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
 
-    @Column(name = "name", nullable = false, length = 100, columnDefinition = "varchar(100) default '' COMMENT 'Tên danh mục, cd: đồ điện tử'")
-    private String name;
+    @ManyToOne
+    @JoinColumn(name ="product_id")
+    private Product product;
+
+    @Column(name = "image_url", length = 300)
+    private String imageUrl;
+
+
 }
