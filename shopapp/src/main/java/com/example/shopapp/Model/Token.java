@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor  // Tạo constructor với tất cả các tham số
 @Getter
 @Setter
+@Builder
 public class Token {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

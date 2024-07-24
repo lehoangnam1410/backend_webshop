@@ -12,6 +12,7 @@ import lombok.*;
 @AllArgsConstructor  // Tạo constructor với tất cả các tham số
 @Getter
 @Setter
+@Builder
 public class Category extends BaseEntity {
 
     @Id

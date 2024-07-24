@@ -11,6 +11,7 @@ import java.util.Date;
 @AllArgsConstructor  // Tạo constructor với tất cả các tham số
 @Getter
 @Setter
+@Builder
 public class User extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

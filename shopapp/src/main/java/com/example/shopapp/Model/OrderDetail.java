@@ -10,6 +10,7 @@ import lombok.*;
 @AllArgsConstructor  // Tạo constructor với tất cả các tham số
 @Getter
 @Setter
+@Builder
 public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
